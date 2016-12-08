@@ -4,6 +4,7 @@
   "description": "Cli for white-label app",
   "main": "index.js",
   "author": "Joshua Edwards",
+  "url": "https://github.com/pandadragoon/cli-rxss",
   "license": "MIT",
   "dependencies": {
     "app-root-path": "^2.0.1",
