@@ -40,7 +40,7 @@ switch (program.generate) {
 }
 
 function createAsset(type, fileName, fileTemplate, specTemplate){
-    const assetPath = './' + type + FOLDER;
+    const assetPath = appRoot + '/' + type + FOLDER;
 
     try {
         fs.mkdirSync(assetPath);
