@@ -17,7 +17,7 @@ program
     .option('-n, --name <name>, name for new file')
     .parse(process.argv)
 
-const LOWER = program.name.toLowerCase();
+const LOWER = utils.snakeToCamelCase(program.name.toLowerCase());
 const CAPITAL = utils.toCapitalCase(LOWER);
 const FOLDER = '/' + CAPITAL + '/';
 
