@@ -2,13 +2,15 @@
 
 ## RXSS  Generator
 
-The rxss generator generates components, class-components, containers, & stores
-based off of react and mobx.  It is assumed that the file structure is the following
-|- [project folder]
-|-- src
-|--- components
-|--- containers 
-|--- stores
+The rxss generator generates components, class-components, containers, & stores based off of react and mobx. It is assumed that the file structure is the following
+
+```
+. [project folder]
++-- src
+| +-- components
+| +-- containers 
+| +-- stores
+```
 
 ### Installing
 
