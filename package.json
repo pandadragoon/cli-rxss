@@ -1,0 +1,12 @@
+{
+  "name": "cli-rxss",
+  "version": "1.0.0",
+  "description": "Cli for white-label app",
+  "main": "index.js",
+  "author": "Joshua Edwards",
+  "license": "MIT",
+  "dependencies": {
+    "app-root-path": "^2.0.1",
+    "commander": "^2.9.0"
+  }
+}
