@@ -7,13 +7,14 @@ import chai, { expec } from 'chai';
 
 chai.use(chaiEnzyme());
 
-import ${upper}  from './${upper}';
+import {${name} as ${upper}}  from './${upper}';
+import /* store-name */ from /* store-name */;
 
 describe('${upper}', ()=> {
     let ${name};
 
     describe('with props set', ()=> {
-        let props = {/* add props here */};
+        let props = {/* add props and store here */};
 
         beforeEach(()=>{
             ${name} = mount(
@@ -36,5 +37,6 @@ describe('${upper}', ()=> {
 
     });
 });
-`
+`;
+
 }

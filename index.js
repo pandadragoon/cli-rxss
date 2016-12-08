@@ -25,11 +25,20 @@ switch (program.generate) {
     case 'component':
         createAsset('components', CAPITAL, componentTemplate, specComponentTemplate);
         break;
+    case 'component:mobx':
+        createAsset('components', CAPITAL, componentMobxTemplate, specComponentMobxTemplate);
+        break;
     case 'class-component':
         createAsset('components', CAPITAL, classComponentTemplate, specComponentTemplate);
         break;
+    case 'class-component:mobx':
+        createAsset('components', CAPITAL, classComponentMobxTemplate, specComponentMobxTemplate);
+        break;
     case 'container':
         createAsset('containers', CAPITAL, containerTemplate, specComponentTemplate);
+        break;
+    case 'container:mobx':
+        createAsset('containers', CAPITAL, containerMobxTemplate, specComponentMobxTemplate);
         break;
     case 'store':
         createAsset('stores', LOWER + 'Store', storeTemplate, specStoreTemplate);

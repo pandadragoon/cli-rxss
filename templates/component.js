@@ -3,19 +3,18 @@ module.exports = function(name, upper){
 return `
 /* @flow */
 
-import React, { PropTypes } from 'react'
+import React, { PropTypes } from 'react';
 
-const ${name} = (props: Object): Object => {
+const ${upper} = (props: Object): Object => {
     return (
         <div></div>
     )
 }
 
-${name}.propTypes = {
+${upper}.propTypes = {
 /* fill out propTypes */
 };
 
-export { ${ name } };
 export default ${upper};
 `
 }
