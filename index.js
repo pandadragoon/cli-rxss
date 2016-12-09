@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var program = require('commander');
 var appRoot = require('app-root-path');
 var fs = require('fs');
