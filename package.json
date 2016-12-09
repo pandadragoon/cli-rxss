@@ -1,6 +1,6 @@
 {
   "name": "cli-rxss",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "Cli for white-label app",
   "main": "index.js",
   "author": "Joshua Edwards",

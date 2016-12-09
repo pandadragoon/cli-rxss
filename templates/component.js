@@ -8,7 +8,7 @@ import React, { PropTypes } from 'react';
 const ${upper} = (props: Object): Object => {
     return (
         <div></div>
-    )
+    );
 }
 
 ${upper}.propTypes = {

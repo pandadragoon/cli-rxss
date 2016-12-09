@@ -8,6 +8,10 @@ var classComponentTemplate = require('./templates/class-component');
 var containerTemplate = require('./templates/container');
 var storeTemplate = require('./templates/store');
 var specStoreTemplate = require('./templates/spec-store');
+var componentMobxTemplate = require('./templates/component-mobx');
+var specComponentMobxTemplate = require('./templates/spec-component-mobx');
+var classComponentMobxTemplate = require('./templates/class-component-mobx');
+var containerMobxTemplate = require('./templates/container-mobx');
 
 var utils = require('./utils');
 
