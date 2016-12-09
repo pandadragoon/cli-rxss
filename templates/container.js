@@ -1,4 +1,4 @@
-module.exports = function(name, upper){
+module.exports = function (name, upper) {
 
 return `
 /* @flow */
@@ -6,22 +6,22 @@ return `
 import React, { Component, PropTypes } from 'react';
 
 class ${upper} extends Component {
-    constructor(props: Object) {
-        super(props);
+  constructor(props: Object) {
+    super(props);
 
-        this.state = {/* add your state */};
-    }
+    this.state = {/* add your state */};
+  }
 
-    render(): Object {
-        return (
-            <div></div>
-        )
-    }
+  render(): Object {
+    return (
+        <div></div>
+    );
+  }
 }
 
 ${upper}.propTypes = {
     /* fill out proptypes */
-}
+};
 
 export default ${upper};
 `

@@ -4,16 +4,16 @@ return `
 import { observable, action, computed } from 'mobx';
 
 class ${upper}Store {
-    @observable instanceVariable: Object;
+  @observable instanceVariable: Object;
 
-    constructor(){
-        this.instanceVariable = { /* initialize instance variables in constructor */};
-    }
+  constructor(){
+    this.instanceVariable = { /* initialize instance variables in constructor */};
+  }
 }
 
 const ${name}Store = new ${upper}Store();
 
-export default exampleStore;
-export { ExampleStore };
+export default ${name}Store;
+export { ${upper}Store };
 `;
 }

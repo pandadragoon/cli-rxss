@@ -17,7 +17,7 @@ class ${name} extends Component {
 
 ${name}.propTypes = {
 /* fill out props */
-}
+};
 
 const ${upper} = observer(['/* store name */'], ${name});
 

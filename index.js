@@ -23,7 +23,7 @@ program
 
 const LOWER = utils.snakeToCamelCase(program.name.toLowerCase());
 const CAPITAL = utils.toCapitalCase(LOWER);
-const FOLDER = '/' + CAPITAL + '/';
+// const FOLDER = '/' + CAPITAL + '/';
 
 switch (program.generate) {
     case 'component':
@@ -53,7 +53,7 @@ switch (program.generate) {
 }
 
 function createAsset(type, fileName, fileTemplate, specTemplate){
-    const assetPath = appRoot + '/src/' + type + FOLDER;
+    const assetPath = appRoot + '/src/' + type + '/' + fileName + '/';
 
     try {
         fs.mkdirSync(assetPath);
