@@ -15,6 +15,7 @@ The rxss generator generates components, class-components, containers, & stores 
 ### Installing
 
 ``` npm -i cli-rxss -D ``` or ``` yarn add cli-rxss -D ```
+``` npm link cli-rxss ```
 
 ### Commands
 
