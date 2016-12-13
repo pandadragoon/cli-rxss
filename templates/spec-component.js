@@ -3,7 +3,7 @@ module.exports = function(name, upper){
 return `
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
-import chai, { expec } from 'chai';
+import chai, { expect } from 'chai';
 
 chai.use(chaiEnzyme());
 
