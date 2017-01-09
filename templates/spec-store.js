@@ -5,11 +5,11 @@ import { ${upper}Store } from './${name}Store';
 import chai, { expect } from 'chai';
 
 describe('${upper} Store', ()=> {
-    let store;
+  let store;
 
-    beforeEach(()=> {
-        store = new ${upper}Store();
-    });
+  beforeEach(()=> {
+    store = new ${upper}Store();
+  });
 
 });
 `;

@@ -10,31 +10,31 @@ chai.use(chaiEnzyme());
 import ${upper}  from './${upper}';
 
 describe('${upper}', ()=> {
-    let ${name};
+  let ${name};
 
-    describe('with props set', ()=> {
-        let props = {/* add props here */};
+  describe('with props set', ()=> {
+    let props = {/* add props here */};
 
-        beforeEach(()=>{
-            ${name} = mount(
-                <${upper} {...props} />
-            );
-        });
-
-        it('exists', ()=> {
-            expect(${name}).to.exist;
-        });
-
+    beforeEach(()=>{
+      ${name} = mount(
+        <${upper} {...props} />
+      );
     });
 
-    describe('with props not set', ()=> {
-        beforeEach(()=> {
-            ${name} = mount(
-                <${upper} />
-            );
-        });
-
+    it('exists', ()=> {
+      expect(${name}).to.exist;
     });
+
+  });
+
+  describe('with props not set', ()=> {
+    beforeEach(()=> {
+      ${name} = mount(
+        <${upper} />
+      );
+    });
+
+  });
 });
 `
 }

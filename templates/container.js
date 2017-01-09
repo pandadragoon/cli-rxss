@@ -14,13 +14,13 @@ class ${upper} extends Component {
 
   render(): Object {
     return (
-        <div></div>
+      <div></div>
     );
   }
 }
 
 ${upper}.propTypes = {
-    /* fill out proptypes */
+  /* fill out proptypes */
 };
 
 export default ${upper};

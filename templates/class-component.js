@@ -14,7 +14,7 @@ class ${upper} extends Component {
 
   render(): Object {
     return (
-        <div></div>
+      <div></div>
     );
   }
 }
