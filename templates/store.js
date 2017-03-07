@@ -1,6 +1,8 @@
 module.exports = function(name, upper){
 
 return `
+/* @flow */
+
 import { observable, action, computed } from 'mobx';
 
 class ${upper}Store {
