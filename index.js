@@ -72,6 +72,10 @@ function createAsset(type, fileName, fileTemplate, specTemplate){
             fs.mkdirSync(appRoot + '/src/' + type + '/');
         }
 
+        if(fs.existsSync(assetPath)){
+            throw `${type.toUpperCase()} PATH COLLISION`
+        }
+        
         fs.mkdirSync(assetPath);
         console.info(fileName + ' was successfully created!');
     } catch(err){

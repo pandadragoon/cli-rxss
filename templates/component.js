@@ -9,7 +9,7 @@ const ${upper} = (props: Object): Object => {
   return (
       <div></div>
   );
-}
+};
 
 ${upper}.propTypes = {
 /* fill out propTypes */
