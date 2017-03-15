@@ -73,11 +73,11 @@ function createAsset(type, fileName, fileTemplate, specTemplate){
         }
 
         if(fs.existsSync(assetPath)){
-            throw `${type.toUpperCase()} PATH COLLISION`
+            throw `${type.toUpperCase()} PATH COLLISION`;
+        } else {
+            fs.mkdirSync(assetPath);
+            console.info(fileName + ' was successfully created!');
         }
-        
-        fs.mkdirSync(assetPath);
-        console.info(fileName + ' was successfully created!');
     } catch(err){
         console.error(err);
         console.error(`That ${type} already exists.  Delete existing file or choose another name.`);
