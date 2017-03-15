@@ -81,6 +81,7 @@ function createAsset(type, fileName, fileTemplate, specTemplate){
     } catch(err){
         console.error(err);
         console.error(`That ${type} already exists.  Delete existing file or choose another name.`);
+        break;
     }
 
     fs.writeFile(assetPath + fileName + '.js', fileTemplate(LOWER, CAPITAL), function(err){
