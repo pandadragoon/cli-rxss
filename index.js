@@ -57,7 +57,7 @@ switch (program.generate) {
         };
         console.log('program', program);
         console.log('type', program.mock);
-        var invalidType = !program.mock && !Object.hasOwnProperty(program.mock.toLowerCase());
+        var invalidType = !program.mock;
 
         if(invalidType){
             console.error('Please enter a valid type. Store, Container, or Component');
