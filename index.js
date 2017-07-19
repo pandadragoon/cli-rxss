@@ -21,7 +21,7 @@ var utils = require('./utils');
 program
     .option('-g, --generate <type>, generate a new application element')
     .option('-n, --name <name>, name for new file')
-    .option('-t, --type <type>, type of file i.e. store, container, or component')
+    .option('-m, --mock <mock>, random shit')
     .parse(process.argv)
 
 const LOWER = utils.snakeToCamelCase(program.name.toLowerCase());
@@ -56,15 +56,15 @@ switch (program.generate) {
             component: 'components'
         };
         console.log('program', program);
-        console.log('type', program.type);
-        var invalidType = !program.type && !Object.hasOwnProperty(program.type.toLowerCase());
+        console.log('type', program.mock);
+        var invalidType = !program.mock && !Object.hasOwnProperty(program.mock.toLowerCase());
 
         if(invalidType){
             console.error('Please enter a valid type. Store, Container, or Component');
             return null;
         }
 
-        createTest(typeOptions[program.type.toLowerCase()], CAPITAL);
+        createTest(typeOptions[program.mock.toLowerCase()], CAPITAL);
         break;
     default:
         console.error(program.generate + ' is not a valid element that can be created');
