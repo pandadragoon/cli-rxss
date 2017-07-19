@@ -58,14 +58,14 @@ switch (program.generate) {
 
         console.log('test', program.test);
 
-        var invalidType = !program.test && !typeOptions.hasOwnProperty(program.test.toLowerCase());
+        var invalidType = !program.generate && !typeOptions.hasOwnProperty(program.generate.toLowerCase());
 
         if(invalidType){
             console.error('Please enter a valid type. Store, Container, or Component');
             return null;
         }
 
-        createTest(typeOptions[program.test.toLowerCase()], CAPTIAL);
+        createTest(typeOptions[program.generate.toLowerCase()], CAPTIAL);
         break;
     default:
         console.error(program.generate + ' is not a valid element that can be created');
