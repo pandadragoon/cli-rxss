@@ -21,7 +21,6 @@ var utils = require('./utils');
 program
     .option('-g, --generate <type>, generate a new application element')
     .option('-n, --name <name>, name for new file')
-    .option('-m, --mock <mock>, random shit')
     .parse(process.argv)
 
 const LOWER = utils.snakeToCamelCase(program.name.toLowerCase());
@@ -48,23 +47,6 @@ switch (program.generate) {
         break;
     case 'store':
         createAsset('stores', LOWER + 'Store', storeTemplate, specStoreTemplate);
-        break;
-    case 'test':
-        var typeOptions = {
-            container: 'containers',
-            store: 'stores',
-            component: 'components'
-        };
-        console.log('program', program);
-        console.log('type', program.mock);
-        var invalidType = !program.mock;
-
-        if(invalidType){
-            console.error('Please enter a valid type. Store, Container, or Component');
-            return null;
-        }
-
-        createTest(typeOptions[program.mock.toLowerCase()], CAPITAL);
         break;
     default:
         console.error(program.generate + ' is not a valid element that can be created');
@@ -119,35 +101,4 @@ function createAsset(type, fileName, fileTemplate, specTemplate){
     });
 
 
-}
-
-/**
- * 
- * @param {string} type // type of test to create
- * @param {string} directoryName // name of folder to put test
- */
-function createTest(type, directoryName){
-    const assetPath = appRoot + '/src/' + type + '/' + directoryName + '/' + 'spec.js';
-    let template = specComponentTemplate;
-
-    if(type === 'stores'){
-        template = specStoreTemplate;
-    }
-
-    try {
-        if(fs.existsSync(assetPath)){
-            throw `${type.toUpperCase()} PATH COLLISION`;
-        }
-    } catch(err){
-        console.error(err);
-        return null;
-    }
-
-    fs.writeFile(assetPath, template(LOWER, CAPITAL), function(err){
-        if(err){
-            console.error(err);
-        }
-
-        console.info(`${CAPITAL} test file was successfully created!`);
-    });
 }
