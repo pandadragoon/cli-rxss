@@ -56,7 +56,9 @@ switch (program.generate) {
             component: 'components'
         };
 
-        var invalidType = !program.test && !Object.hasOwnProperty(program.test.toLowerCase());
+        console.log('test', program.test);
+
+        var invalidType = !program.test && !typeOptions.hasOwnProperty(program.test.toLowerCase());
 
         if(invalidType){
             console.error('Please enter a valid type. Store, Container, or Component');
