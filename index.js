@@ -72,33 +72,40 @@ function createAsset(type, fileName, fileTemplate, specTemplate){
             fs.mkdirSync(appRoot + '/src/' + type + '/');
         }
 
-        if(fs.existsSync(assetPath)){
-            throw `${type.toUpperCase()} PATH COLLISION`;
-        } else {
-            fs.mkdirSync(assetPath);
+        if(!fs.existsSync(assetPath)){
+             fs.mkdirSync(assetPath);
             console.info(fileName + ' was successfully created!');
+        } else {
+            console.warn(`Directory already exists for ${fileName}`)
+        }
+
+        if(!fs.existsSync(assetPath + fileName + '.js')){
+            fs.writeFile(assetPath + fileName + '.js', fileTemplate(LOWER, CAPITAL), function(err){
+                if(err){
+                    console.error(err);
+                }
+
+                console.info(`${fileName}.js was successfully created!`);
+            });
+        } else {
+            console.warn(`File already exists for ${fileName}.js at ${assetPath}${fileName}.js`);
+        }
+
+        if(!fs.existsSync(assetPath + 'spec.js')){
+            fs.writeFile(assetPath + 'spec.js', specTemplate(LOWER, CAPITAL), function(err){
+                if(err){
+                    console.error(err);
+                }
+
+                console.info(`${CAPITAL} test file was successfully created!`);
+            }); 
+        } else {
+            console.warn(`Test file for ${fileName} already exists at ${assetPath}/spec.js`);
         }
     } catch(err){
         console.error(err);
         console.error(`That ${type} already exists.  Delete existing file or choose another name.`);
         return null;
     }
-
-    fs.writeFile(assetPath + fileName + '.js', fileTemplate(LOWER, CAPITAL), function(err){
-        if(err){
-            console.error(err);
-        }
-
-        console.info(`${fileName}.js was successfully created!`)
-    });
-
-    fs.writeFile(assetPath + 'spec.js', specTemplate(LOWER, CAPITAL), function(err){
-        if(err){
-            console.error(err);
-        }
-
-        console.info(`${CAPITAL} test file was successfully created!`);
-    });
-
 
 }
