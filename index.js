@@ -21,7 +21,7 @@ var utils = require('./utils');
 program
     .option('-g, --generate <type>, generate a new application element')
     .option('-n, --name <name>, name for new file')
-    .option('-t, --test <test>, type of file i.e. store, container, or component')
+    .option('-t, --type <type>, type of file i.e. store, container, or component')
     .parse(process.argv)
 
 const LOWER = utils.snakeToCamelCase(program.name.toLowerCase());
@@ -55,17 +55,16 @@ switch (program.generate) {
             store: 'stores',
             component: 'components'
         };
-
-        console.log('test', program.test);
-
-        var invalidType = !program.generate && !typeOptions.hasOwnProperty(program.generate.toLowerCase());
+        console.log('program', program);
+        console.log('type', program.type);
+        var invalidType = !program.type && !Object.hasOwnProperty(program.type.toLowerCase());
 
         if(invalidType){
             console.error('Please enter a valid type. Store, Container, or Component');
             return null;
         }
 
-        createTest(typeOptions[program.generate.toLowerCase()], CAPTIAL);
+        createTest(typeOptions[program.type.toLowerCase()], CAPITAL);
         break;
     default:
         console.error(program.generate + ' is not a valid element that can be created');
@@ -128,7 +127,7 @@ function createAsset(type, fileName, fileTemplate, specTemplate){
  * @param {string} directoryName // name of folder to put test
  */
 function createTest(type, directoryName){
-    const assetPath = appRoot + '/src/' + type + '/' + fileName + '/' + 'spec.js';
+    const assetPath = appRoot + '/src/' + type + '/' + directoryName + '/' + 'spec.js';
     let template = specComponentTemplate;
 
     if(type === 'stores'){
